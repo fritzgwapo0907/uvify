@@ -144,13 +144,13 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 text-center">
         <div className="max-w-6xl mx-auto space-y-8">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-100 rounded-full border border-orange-200">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-100 rounded-full border border-orange-200 animate-fadeIn">
             <span className="text-orange-700 text-sm font-semibold tracking-wide">{t("common.uvify")}</span>
           </div>
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[1.1] tracking-tight animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
             {t("about.title")}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
             {t("about.subtitle")}
           </p>
         </div>
@@ -165,8 +165,12 @@ export default function LandingPage() {
             { icon: "📈", title: t("login.historicalData"), desc: t("login.historicalDataDesc") },
             { icon: "👥", title: t("login.multiUserSupport"), desc: t("login.multiUserDesc") },
           ].map((item, i) => (
-            <div key={i} className="group bg-white rounded-2xl p-8 border border-gray-200 hover:border-orange-300 hover:shadow-2xl transition-all duration-300">
-              <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+            <div
+              key={i}
+              className="group bg-white rounded-2xl p-8 border border-gray-200 hover:border-orange-300 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fadeInUp"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              <div className="text-5xl mb-6 group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300">{item.icon}</div>
               <h3 className="font-bold text-gray-900 mb-3 text-xl">{item.title}</h3>
               <p className="text-gray-600 leading-relaxed">{item.desc}</p>
             </div>
@@ -256,8 +260,8 @@ export default function LandingPage() {
 
       {/* Login Modal */}
       {showLoginModal && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-10 relative animate-in zoom-in duration-300">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-10 relative animate-scaleIn">
             <button onClick={() => setShowLoginModal(false)} className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-3xl transition-colors leading-none">×</button>
 
             <div className="text-center mb-8">

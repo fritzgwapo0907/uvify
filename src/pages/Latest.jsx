@@ -230,35 +230,35 @@ export default function Latest() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-4xl w-full">
         {/* UV Gauge */}
-        <div className="flex justify-center">
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-orange-200">
+        <div className="flex justify-center animate-fadeInUp">
+          <div className="bg-white rounded-2xl p-6 shadow-smooth-lg border border-orange-200 hover:shadow-2xl transition-smooth hover:scale-105">
             <UVGauge value={uvValue} size={220} />
           </div>
         </div>
 
         {/* Latest Data Details */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg border border-orange-200">
+        <div className="bg-white rounded-2xl p-6 shadow-smooth-lg border border-orange-200 hover:shadow-2xl transition-smooth animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
           <h2 className="text-xl font-semibold mb-4 text-orange-700">
             📊 {t("Details")}
           </h2>
 
           <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg transition-smooth hover:bg-orange-100 hover:scale-105">
               <span className="font-medium text-gray-700">📅 {t("latest.date")}:</span>
               <span className="font-semibold text-gray-900">{latest.date || "N/A"}</span>
             </div>
 
-            <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg transition-smooth hover:bg-orange-100 hover:scale-105">
               <span className="font-medium text-gray-700">⏰ {t("latest.time")}:</span>
               <span className="font-semibold text-gray-900">{latest.time || "N/A"}</span>
             </div>
 
-            <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg transition-smooth hover:bg-orange-100 hover:scale-105">
               <span className="font-medium text-gray-700">📈 {t("latest.uvIndex")}:</span>
               <span className="font-semibold text-lg text-gray-900">{latest.uvi}</span>
             </div>
 
-            <div className={`flex items-center justify-between p-3 rounded-lg ${uvLevelInfo.bgColor}`}>
+            <div className={`flex items-center justify-between p-3 rounded-lg ${uvLevelInfo.bgColor} transition-smooth hover:scale-105 shadow-smooth`}>
               <span className="font-medium text-gray-700">⚠️ {t("latest.level")}:</span>
               <span className={`font-semibold ${uvLevelInfo.textColor}`}>{uvLevelInfo.level}</span>
             </div>
@@ -286,12 +286,12 @@ export default function Latest() {
       </div>
 
       {/* UV Analytics Chart - IMPORTANT ANALYTICS SECTION */}
-      <div className="mt-8 w-full max-w-4xl">
+      <div className="mt-8 w-full max-w-4xl animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
         <UVAnalyticsChart />
       </div>
 
       {/* UV Accumulation Analytics */}
-      <div className="mt-8 w-full max-w-4xl">
+      <div className="mt-8 w-full max-w-4xl animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
         <UVAccumulationAnalytics />
       </div>
     </div>

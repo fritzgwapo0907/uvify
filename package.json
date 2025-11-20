@@ -78,7 +78,7 @@
     "terser": "latest",
     "tsx": "latest",
     "vaul": "latest",
-    "vite": "latest",
+    "vite": "5.4.0",
     "yaml": "latest",
     "zod": "3.25.76"
   },

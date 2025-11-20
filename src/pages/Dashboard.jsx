@@ -65,7 +65,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative text-gray-900 dark:text-gray-100 transition-colors duration-300 pb-20 md:pb-0">
       <UVNotification />
 
-      <header className="fixed top-0 left-0 w-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-b border-orange-200 dark:border-gray-700 shadow-lg z-50 transition-colors duration-300">
+      <header className="fixed top-0 left-0 w-full glass-effect border-b border-orange-200 dark:border-gray-700 shadow-smooth z-50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo Section */}
@@ -89,16 +89,16 @@ export default function Dashboard() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`relative flex items-center px-4 py-2 rounded-lg transition-all duration-300 group ${
+                  className={`relative flex items-center px-4 py-2 rounded-lg transition-smooth group ${
                     isActive(item.href)
-                      ? "bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-orange-900/40 dark:to-yellow-900/40 text-orange-700 dark:text-orange-400 border border-orange-300 dark:border-orange-600 shadow-md"
-                      : "text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 hover:bg-orange-50/80 dark:hover:bg-gray-700/50"
+                      ? "bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-orange-900/40 dark:to-yellow-900/40 text-orange-700 dark:text-orange-400 border border-orange-300 dark:border-orange-600 shadow-smooth"
+                      : "text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 hover:bg-orange-50/80 dark:hover:bg-gray-700/50 hover:scale-105"
                   }`}
                 >
-                  <span className="text-lg mr-2">{item.icon}</span>
+                  <span className="text-lg mr-2 group-hover:scale-110 transition-transform">{item.icon}</span>
                   {item.name}
                   {isActive(item.href) && (
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-1 bg-orange-500 rounded-full"></div>
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-1 bg-orange-500 rounded-full animate-scaleIn"></div>
                   )}
                 </Link>
               ))}
@@ -211,10 +211,10 @@ export default function Dashboard() {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 md:py-8 relative z-10 mt-16 md:mt-20 transition-colors duration-300">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 md:py-8 relative z-10 mt-16 md:mt-20 transition-colors duration-300 animate-fadeIn">
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-yellow-200/40 to-orange-200/40 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-2xl md:rounded-3xl blur-2xl"></div>
-          <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl md:rounded-3xl border border-orange-200/60 dark:border-gray-700/60 shadow-lg overflow-hidden transition-colors duration-300">
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-200/40 to-orange-200/40 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-2xl md:rounded-3xl blur-2xl animate-pulse"></div>
+          <div className="relative glass-effect rounded-2xl md:rounded-3xl border border-orange-200/60 dark:border-gray-700/60 shadow-smooth-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
             <div className="min-h-[calc(100vh-10rem)] md:min-h-[calc(100vh-12rem)] p-4 md:p-6">
               <Outlet />
             </div>
